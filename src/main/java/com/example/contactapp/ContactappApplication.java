@@ -1,0 +1,17 @@
+package com.example.contactapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication;
+
+
+
+@SpringBootApplication
+public class ContactappApplication {
+
+	public static void main(String[] args) {
+        SpringApplication.run(ContactappApplication.class, args);
+
+	}
+
+}

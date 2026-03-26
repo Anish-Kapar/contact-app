@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact Manager</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            width: 400px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            width: 80%;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Contact Manager</h2>
+
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="text" name="phone" placeholder="Phone" required><br>
+        <button type="submit">Add Contact</button>
+    </form>
+
+    <br>
+    <a href="/remove">Remove Last Contact</a>
+
+    <h3>Contacts:</h3>
+    <ul>
+        <li th:each="c : ${contacts}">
+            <span th:text="${c.name}"></span> -
+            <span th:text="${c.phone}"></span>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
