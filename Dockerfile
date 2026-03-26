@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-COPY . .
+COPY src/main/java/com/example/contactapp .
 
 RUN chmod +x mvnw
 RUN ./mvnw clean package
