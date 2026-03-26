@@ -2,9 +2,13 @@ FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-COPY src/main/java/com/example/contactapp .
+# Copy FULL project (important)
+COPY . .
 
+# Give permission to mvnw
 RUN chmod +x mvnw
+
+# Build project
 RUN ./mvnw clean package
 
 EXPOSE 8080
